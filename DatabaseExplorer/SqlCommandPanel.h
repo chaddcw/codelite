@@ -77,6 +77,8 @@ public:
 // ----------------------------------------------------------------
 class SQLCommandPanel : public _SqlCommandPanel
 {
+    int m_OperatorStyle;
+    int m_CommentStyle;
 
 protected:
     virtual void OnHistoryToolClicked(wxAuiToolBarEvent& event);
@@ -89,7 +91,7 @@ protected:
 
 protected:
     bool IsBlobColumn(const wxString &str);
-    wxArrayString ParseSql(const wxString &sql) const;
+    wxArrayString ParseSql() const;
     void SaveSqlHistory();
 
 public:
